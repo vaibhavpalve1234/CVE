@@ -1,0 +1,1 @@
+[{"cve_id": "CVE-2021-44228", "description": "Apache Log4j remote code execution vulnerability allows attackers to execute arbitrary code via JNDI injection.", "severity": "CRITICAL"}, {"cve_id": "CVE-2020-1472", "description": "Zerologon vulnerability allows privilege escalation via Netlogon protocol flaw.", "severity": "CRITICAL"}]
