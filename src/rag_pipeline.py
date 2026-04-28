@@ -77,4 +77,15 @@ Return:
         docs = self.retrieve(query, k)
         prompt = self.build_prompt(query, docs)
         result = self.guard.enforce(self.model, prompt)
-        return result
+        if len(result) > 0:
+            d = result[0]
+            print(d)
+            return {
+                "cve_id": d["cve_id"],
+                "summary": d["description"],
+                "severity": d["severity"],
+                "impact": "Potential exploitation risk",
+                "mitigation": "Apply latest patch"
+            }
+
+        return {"error": "No data"}
