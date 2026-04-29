@@ -1,8 +1,11 @@
-import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import argparse
 import json
-from src.rag_pipeline import CVERag
+import os
+import sys
+
+if __package__ is None or __package__ == "":
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from src.config import TOP_K
 
 
@@ -30,6 +33,8 @@ def build_parser():
 def main():
     parser = build_parser()
     args = parser.parse_args()
+
+    from src.rag_pipeline import CVERag
 
     rag = CVERag()
 
